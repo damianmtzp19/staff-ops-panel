@@ -1,0 +1,38 @@
+<!-- ============================ -->
+<!--        PESTAÑA 6: BASE DE DATOS        -->
+<!-- ============================ -->
+
+<section id="basedatos" class="tab-content">
+    <h1>Base de Datos del Usuario</h1>
+
+    <!-- Caja de búsqueda -->
+    <div class="db-search-box">
+        <input id="buscar-usuario" placeholder="Ingresa ID / Discord / Roblox / Nombre">
+        <button onclick="buscarUsuario()">Buscar</button>
+    </div>
+
+    <!-- RESULTADOS -->
+    <div id="resultado-busqueda" class="resultado-box hidden">
+
+        <h2>Resultados</h2>
+
+        <!-- Información principal -->
+        <div id="db-info-usuario"></div>
+
+        <!-- Archivos -->
+        <h3>Archivos Registrados</h3>
+        <div id="db-archivos" class="db-section"></div>
+
+        <!-- Kicks -->
+        <h3>Kicks</h3>
+        <div id="db-kicks" class="db-section"></div>
+
+        <!-- Baneos -->
+        <h3>Baneos</h3>
+        <div id="db-baneos" class="db-section"></div>
+
+        <!-- Apelaciones -->
+        <h3>Apelaciones</h3>
+        <div id="db-apelaciones" class="db-section"></div>
+    </div>
+</section>
