@@ -1,0 +1,129 @@
+/* ====== GENERAL ====== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #1B1B1B;
+    color: white;
+}
+
+/* ====== SIDEBAR ====== */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: #111;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-top: 30px;
+    border-right: 2px solid #2D2D2D;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px 25px;
+    font-size: 17px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #BFBFBF;
+    display: block;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active {
+    background: #272727;
+}
+
+.sidebar ul li.active a {
+    color: #fff;
+}
+
+/* ====== MAIN ====== */
+.main {
+    margin-left: 260px;
+    padding: 40px;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+/* ====== CARDS (Dashboard) ====== */
+.cards {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #222;
+    padding: 25px;
+    width: 260px;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+.card h3 {
+    margin: 0;
+    color: #FFD369;
+}
+
+.card p {
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* ====== BOTONES ====== */
+.btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-green { background: #2ECC71; }
+.btn-red { background: #E74C3C; }
+.btn-yellow { background: #F1C40F; }
+
+/* ====== FORMULARIOS ====== */
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #2B2B2B;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: white;
+}
+
+label {
+    font-weight: bold;
+}
+
+/* ====== TABLAS ====== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+table th {
+    background: #333;
+    padding: 12px;
+}
+
+table td {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
