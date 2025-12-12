@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrativo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="firebase.js"></script>
+    <script defer src="roles.js"></script>
+    <script defer src="dashboard.js"></script>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h2>Panel Staff</h2>
+        <ul>
+            <li class="tab-btn active" data-tab="dashboard">Dashboard</li>
+            <li class="tab-btn" data-tab="servicios">Administrar Servicios</li>
+            <li class="tab-btn" data-tab="archivos">Archivos</li>
+            <li class="tab-btn" data-tab="apelaciones">Apelaciones</li>
+            <li class="tab-btn" data-tab="logs">Logs</li>
+
+            <!-- 🔥 NUEVA PESTAÑA BASE DE DATOS -->
+            <li class="tab-btn" data-tab="basedatos">Base de Datos</li>
+        </ul>
+    </div>
+
+    <div class="main">
+
+        <!-- ==========================
+               DASHBOARD
+        =========================== -->
+        <section id="dashboard" class="tab-content active">
+            <h1>Dashboard General</h1>
+
+            <div class="server-status-box">
+                <h3>Estado del Servidor</h3>
+                <div id="server-status">
+                    <span id="status-indicator" class="status-low"></span>
+                    <p id="status-text">Bajo</p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Usuarios con Servicio</h3>
+                    <p id="count-servicios">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Archivos Subidos</h3>
+                    <p id="count-archivos">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Apelaciones Pendientes</h3>
+                    <p id="count-apelaciones">0</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================
+                SERVICIOS
+        =========================== -->
+        <section id="servicios" class="tab-content">
+            <h1>Administrar Servicios</h1>
+            <div id="servicios-container"></div>
+        </section>
+
+        <!-- ==========================
+                ARCHIVOS
+        =========================== -->
+        <section id="archivos" class="tab-content">
+            <h1>Archivos del Staff</h1>
+            <input id="archivo-upload" type="file">
+            <button onclick="subirArchivo()">Subir</button>
+
+            <h2>Lista de Archivos</h2>
+            <div id="lista-archivos"></div>
+        </section>
+
+        <!-- ==========================
+                APELACIONES
+        =========================== -->
+        <section id="apelaciones" class="tab-content">
+            <h1>Apelaciones</h1>
+            <div id="lista-apelaciones"></div>
+        </section>
+
+        <!-- ==========================
+                LOGS
+        =========================== -->
+        <section id="logs" class="tab-content">
+            <h1>Logs del Panel</h1>
+            <div id="logs-container"></div>
+        </section>
+
+        <!-- ==========================
+                🔥 NUEVA PESTAÑA
+                BASE DE DATOS
+        =========================== -->
+        <section id="basedatos" class="tab-content">
+            <h1>Búsqueda en Base de Datos</h1>
+
+            <input id="buscar-usuario" placeholder="Ingresa ID / Nombre / Steam / Discord">
+            <button onclick="buscarUsuario()">Buscar</button>
+
+            <div id="resultado-busqueda" class="resultado-box">
+                <!-- Aquí aparecerán:  
+                    - Archivos del usuario  
+                    - Historial de kicks  
+                    - Historial de bans  
+                    - Apelaciones activas  
+                    - Estado del usuario  
+                -->
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
