@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros | Staff OPS</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="firebase.js"></script>
+    <script src="roles.js"></script>
+    <script src="scripts.js"></script>
+</head>
+
+<body class="panel">
+
+    <div class="sidebar">
+        <h2>STAFF OPS</h2>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="admin.html">Administración</a>
+        <a href="registros.html" class="active">Registros</a>
+        <a href="apelaciones.html">Apelaciones</a>
+        <a onclick="logout()">Salir</a>
+    </div>
+
+    <div class="content">
+        <h1>Registros de Expedientes</h1>
+
+        <div class="tabs">
+            <button onclick="openTab('kicks')">Kicks</button>
+            <button onclick="openTab('bansDiscord')">Bans Discord</button>
+            <button onclick="openTab('bansRoblox')">Bans Roblox</button>
+            <button onclick="openTab('warns')">Warns</button>
+        </div>
+
+        <!-- KICKS -->
+        <div id="kicks" class="tab-content">
+            <h2>Kicks</h2>
+            <button class="add-btn" onclick="openForm('kicks')">+</button>
+            <ul id="kicksList"></ul>
+        </div>
+
+        <!-- BANS DISCORD -->
+        <div id="bansDiscord" class="tab-content">
+            <h2>Bans Discord</h2>
+            <button class="add-btn" onclick="openForm('bansDiscord')">+</button>
+            <ul id="bansDiscordList"></ul>
+        </div>
+
+        <!-- BANS ROBLOX -->
+        <div id="bansRoblox" class="tab-content">
+            <h2>Bans Roblox</h2>
+            <button class="add-btn" onclick="openForm('bansRoblox')">+</button>
+            <ul id="bansRobloxList"></ul>
+        </div>
+
+        <!-- WARNS -->
+        <div id="warns" class="tab-content">
+            <h2>Warns</h2>
+            <button class="add-btn" onclick="openForm('warns')">+</button>
+            <ul id="warnsList"></ul>
+        </div>
+
+    </div>
+
+    <!-- Formulario flotante -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <h3 id="formTitle">Nuevo Registro</h3>
+
+            <input id="discordUser" class="input" placeholder="Usuario Discord">
+            <input id="discordID" class="input" placeholder="ID Discord">
+            <input id="robloxUser" class="input" placeholder="Usuario Roblox">
+            <input id="robloxID" class="input" placeholder="ID Roblox">
+
+            <textarea id="motivo" class="input" placeholder="Motivo"></textarea>
+            <textarea id="pruebas" class="input" placeholder="Pruebas (links)"></textarea>
+
+            <button onclick="guardarRegistro()">Guardar</button>
+            <button onclick="closeForm()" class="cancel">Cancelar</button>
+        </div>
+    </div>
+
+</body>
+</html>
