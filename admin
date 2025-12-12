@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración | Staff OPS</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="firebase.js"></script>
+    <script src="roles.js"></script>
+    <script src="scripts.js"></script>
+</head>
+
+<body class="panel">
+
+    <div class="sidebar">
+        <h2>STAFF OPS</h2>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="admin.html" class="active">Administración</a>
+        <a href="registros.html">Registros</a>
+        <a href="apelaciones.html">Apelaciones</a>
+        <a onclick="logout()">Salir</a>
+    </div>
+
+    <div class="content">
+        <h1>Panel Administrativo</h1>
+
+        <div class="tabs">
+            <button onclick="openTab('usuarios')">Usuarios</button>
+            <button onclick="openTab('servicios')">Servicios</button>
+            <button onclick="openTab('logs')">Logs</button>
+        </div>
+
+        <div id="usuarios" class="tab-content">
+            <h3>Agregar Usuario</h3>
+            <input id="newEmail" class="input" placeholder="Correo">
+            <input id="newPass" type="password" class="input" placeholder="Contraseña">
+            <select id="newRank" class="input"></select>
+            <button onclick="crearUsuario()">Crear Usuario</button>
+        </div>
+
+        <div id="servicios" class="tab-content">
+            <h3>Estado del Staff</h3>
+            <button onclick="setServicio('servicio')">En Servicio</button>
+            <button onclick="setServicio('pausa')">En Pausa</button>
+            <button onclick="setServicio('fuera')">Fuera de Servicio</button>
+            <div id="tiempoServicio"></div>
+        </div>
+
+        <div id="logs" class="tab-content">
+            <h3>Logs del Sistema</h3>
+            <ul id="logsList"></ul>
+        </div>
+
+    </div>
+
+</body>
+</html>
