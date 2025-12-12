@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apelaciones | Staff OPS</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="firebase.js"></script>
+    <script src="roles.js"></script>
+    <script src="scripts.js"></script>
+</head>
+
+<body class="panel">
+
+    <div class="sidebar">
+        <h2>STAFF OPS</h2>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="admin.html">Administración</a>
+        <a href="registros.html">Registros</a>
+        <a href="apelaciones.html" class="active">Apelaciones</a>
+        <a onclick="logout()">Salir</a>
+    </div>
+
+    <div class="content">
+        <h1>Apelaciones</h1>
+
+        <div class="subtabs">
+            <button onclick="openSub('discordNegadas')">DC Denegadas</button>
+            <button onclick="openSub('discordPendientes')">DC Pendientes</button>
+            <button onclick="openSub('discordAprobadas')">DC Aprobadas</button>
+
+            <button onclick="openSub('robloxNegadas')">RB Denegadas</button>
+            <button onclick="openSub('robloxPendientes')">RB Pendientes</button>
+            <button onclick="openSub('robloxAprobadas')">RB Aprobadas</button>
+        </div>
+
+        <!-- Cada categoría -->
+        <div id="discordNegadas" class="sub-content red">
+            <h2>Discord — Denegadas</h2>
+            <button class="add-btn" onclick="openAppealForm('discordNegadas')">+</button>
+            <ul id="discordNegadasList"></ul>
+        </div>
+
+        <div id="discordPendientes" class="sub-content yellow">
+            <h2>Discord — Pendientes</h2>
+            <button class="add-btn" onclick="openAppealForm('discordPendientes')">+</button>
+            <ul id="discordPendientesList"></ul>
+        </div>
+
+        <div id="discordAprobadas" class="sub-content green">
+            <h2>Discord — Aprobadas</h2>
+            <button class="add-btn" onclick="openAppealForm('discordAprobadas')">+</button>
+            <ul id="discordAprobadasList"></ul>
+        </div>
+
+        <div id="robloxNegadas" class="sub-content red">
+            <h2>Roblox — Denegadas</h2>
+            <button class="add-btn" onclick="openAppealForm('robloxNegadas')">+</button>
+            <ul id="robloxNegadasList"></ul>
+        </div>
+
+        <div id="robloxPendientes" class="sub-content yellow">
+            <h2>Roblox — Pendientes</h2>
+            <button class="add-btn" onclick="openAppealForm('robloxPendientes')">+</button>
+            <ul id="robloxPendientesList"></ul>
+        </div>
+
+        <div id="robloxAprobadas" class="sub-content green">
+            <h2>Roblox — Aprobadas</h2>
+            <button class="add-btn" onclick="openAppealForm('robloxAprobadas')">+</button>
+            <ul id="robloxAprobadasList"></ul>
+        </div>
+
+    </div>
+
+    <!-- Modal formulario -->
+    <div id="appealModal" class="modal">
+        <div class="modal-content">
+            <h3 id="appealTitle">Nueva Apelación</h3>
+
+            <input id="appealUser" class="input" placeholder="Usuario">
+            <input id="appealID" class="input" placeholder="ID">
+            <textarea id="appealMotivo" class="input" placeholder="Motivo"></textarea>
+            <textarea id="appealPruebas" class="input" placeholder="Pruebas (links)"></textarea>
+            <input type="date" id="appealFecha" class="input">
+
+            <button onclick="guardarApelacion()">Guardar</button>
+            <button onclick="closeAppealForm()" class="cancel">Cancelar</button>
+        </div>
+    </div>
+
+</body>
+</html>
