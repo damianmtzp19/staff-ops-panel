@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F) STAFF Operation Center | Frontera RP</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="firebase.js"></script>
+</head>
+
+<body class="login-body">
+    <div class="login-container">
+        <img src="assets/logo.png" class="login-logo">
+
+        <h1 class="title">STAFF OPS PANEL</h1>
+        <p class="subtitle">Acceso exclusivo para personal autorizado</p>
+
+        <div class="login-box">
+            <input type="email" id="email" placeholder="Correo" class="input">
+            <input type="password" id="password" placeholder="Contraseña" class="input">
+            
+            <button onclick="login()" class="btn-login">Ingresar</button>
+        </div>
+
+        <p id="error" class="error"></p>
+    </div>
+</body>
+</html>
